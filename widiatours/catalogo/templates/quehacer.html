@@ -1,0 +1,838 @@
+<!--Codigo pagina que hacer-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Que Hacer?</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!--Idioma español-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!--Icono-->
+  <link rel="icon" type="image/png" href="icono/avion.png" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  .dropdown {
+  position: relative;
+  display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .navbar-inverse .navbar-toggler-icon { 
+    background-image: url("data:image/svg+xml;.."); 
+} 
+  </style>
+  
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark sticky-top navbar-toggleable-sm">
+  <!--hamburguesa-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  <!-- imagen menu -->
+  <a class="navbar-brand" href="index.html">
+    <img src="icono/widia.png" width="40" height="40" alt="logo">
+  </a>
+  <!-- Barra-->
+    <div class="collapse navbar-collapse" >
+    <ul class="navbar-nav mr-auto" >
+    <li>
+      <a class="nav-link text-light" href="index.html" >INICIO</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-light">DÓNDE IR</a>    
+      <div class="dropdown-content bg-dark">   
+             <div class="btn-group dropright">
+              <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Zona Norte
+              </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#seccion-1">XV Región de Arica y Parinacota</a>
+                  <a class="dropdown-item" href="#seccion-2">I Region de Tarapacá</a>
+                  <a class="dropdown-item" href="#seccion-3">II Región de Antofagasta</a>
+                  <a class="dropdown-item" href="#seccion-4">III Región de Atacama</a>
+                  <a class="dropdown-item" href="#seccion-5">IV Región De Coquimbo</a>
+                </div>
+              </div>
+              <hr>
+              <div class="btn-group dropright margentop" >
+              <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Zona Centro
+              </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#seccion-6">V Región de Valparaiso</a>
+                  <a class="dropdown-item" href="#seccion-7">Región Metropolitana</a>
+                  <a class="dropdown-item" href="#seccion-8">VI Región Libertador Bdo. O'higgins</a>
+              </div>
+            </div> 
+              <hr>
+              <div class="btn-group dropright margentop" >
+              <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Zona Sur        
+              </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#seccion-9">VII Región del Maule</a>
+                  <a class="dropdown-item" href="#seccion-10">XVI Región de Ñuble</a>
+                  <a class="dropdown-item" href="#seccion-11">VIII Región del Bio-Bio</a>
+                  <a class="dropdown-item" href="#seccion-12">IX Región de la araucanía</a>
+                  <a class="dropdown-item" href="#seccion-13">XIV Región del los Ríos</a>
+                  <a class="dropdown-item" href="#seccion-14">X Region de los Lagos</a>
+                  <a class="dropdown-item" href="#seccion-15">X Región de Aysén</a>
+                  <a class="dropdown-item" href="#seccion-16">XII Región de Magallanes</a>
+                </div>
+              </div>
+          </div>
+      </li>
+  <!-- Dropdown -->
+    
+    <li class="nav-item">
+      <a class="nav-link text-light" href="tienda.html">TIENDA</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" href="acercadeee.html">ACERCA DE CHILE</a>
+    </li>
+    </ul>
+    </div>
+    <form class="form-inline" action="iniciosesion.html">
+        <input class="form-control mr-2">
+        <button class="btn btn-outline-info mr-2" >Buscar</button>
+        <button class="btn btn-success mr-2" type="submit">login</button>
+    </form>
+    
+    
+  
+</nav>
+<!--carrusel-->
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      
+      <a href="#seccion-1"><img src="img/rsz_norteir.jpg" alt="Norte" width="1920" height="800"></a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Quieres conocer el norte de chile?</h5>
+        <small>Echale un vistazo a los puntos mas significativos de la zona!</small>
+      </div>
+    </div>
+    <div class="carousel-item">
+      
+      <a href="#seccion-2"><img src="img/rsz_centroi.jpg" alt="Centro" width="1920" height="700"></a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Buscas algo para salir de la rutina?</h5>
+        <small>Conoce algunos puntos de turismo y relax de la zona centro.</small>
+      </div>
+    </div>
+    <div class="carousel-item">
+      
+      <a href="#seccion-3"><img src="img/rsz_surir.jpg" alt="sur" width="1920" height="700"></a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Buscas algo mas tranquilo y alejado de la ciudad?</h5>
+        <small>Vee las maravillas que te esperan en el sur de chile.</small>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<!--fin carrusel-->
+<br>
+<!--CONTENIDO-->
+<div class="container marketing" id="seccion-1">
+
+    <!-- Three columns of text below the carousel -->
+
+    <!-- START THE FEATURETTES -->
+    <!-- XV REGION Arica y Parinacota -->
+    <br>
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar">XV Arica y Parinacota</h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_arica1.jpg" alt="arica"></svg>
+        <br>
+        <br>
+        <h2>Playa El Laucho</h2>
+        <p>La Playa El Laucho es una playa con poco oleaje, excelente para disfrutar nadando y pasar el momento en una playa cerrada!</p>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_arica2.jpg" alt="arica2"></svg>
+        <br>
+        <br>
+        <h2>Salar de Surire</h2>
+        <p>Saca tu cámara fotográfica e inmortaliza a ñandúes, vicuñas y llamas que habitan de manera silvestre en sus alrededores!</p>
+      
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_arica3.jpg" alt="arica3"></svg>
+        <br>
+        <br>
+        <h2>Cuevas de Anzota</h2>
+        <p>Excelente proyecto, un orgullo para Arica Gran riqueza arqueológica, grandes vistas del borde costero, fauna autóctona de la region.</p>
+       
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!-- I REGION DE TARAPACA -->
+
+        <br>
+        <br id="seccion-2">
+    <hr class="featurette-divider">
+    <br >
+    <h3 class="centrar"> I Tarapaca </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_tarapaca1.jpg" alt="tarapaca"></svg>
+        <br>
+        <br>
+        <h2>Volcan Isluga</h2>
+        <p> Rodeado de volcanes, lagunas y cerros sagrados del pueblo aymara. Es una de las zonas con mayor biodiversidad del altiplano andino.</p>
+    
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_tarapaca2.jpg" alt="tarapaca2"></svg>
+        <br>
+        <br>
+        <h2>Iquique</h2>
+        <p>Iquique es una ciudad costera en el norte de Chile, al oeste del desierto de Atacama. Fue un próspero pueblo minero de salitre en el siglo XIX y hoy es un destino vacacional popular</p>
+      
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_tarapaca3.jpg" alt="tarapaca3"></svg>
+        <br>
+        <br>
+        <h2>Museo Corbeta Esmeralda</h2>
+        <p> El Museo Corbeta Esmeralda es un museo chileno ubicado en la ciudad de Iquique. Consiste en una representación a escala real de la corbeta chilena Esmeralda, hundida en el combate naval de Iquique ocurrido en 1879.</p>
+        
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!-- II REGION DE Antofagasta: -->
+
+        <br>
+        <br id="seccion-3">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> II Antofagasta </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_antofagasta1.jpg" alt="antofa"></svg>
+        <br>
+        <br>
+        <h2>Mano del Desierto</h2>
+        <p>El desierto de Atacama, el desierto no polar más árido de la Tierra, ​​​​​​ se extiende en el Norte Grande de Chile, abarcando las regiones de Arica y Parinacota, Tarapacá, Antofagasta, Atacama y el norte de la de Coquimbo; cubre una superficie aproximada de 105 000 km²</p>
+       
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_antofagasta2.jpg" alt="antofa2"></svg><!-- FALTA ESTA -->
+        <br>
+        <br>
+        <h2>Laguna Miscanti</h2>
+        <p> Dos lagunas de aguas cristalinas rodeadas de macizos y un cielo tan azul que hacía disfrutar esta belleza!</p>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_antofagasta3.jpg" alt="antofa3"></svg>
+        <br>
+        <br>
+        <h2>Museo Ruinas de Huanchaca</h2>
+        <p>Las ruinas de Huanchaca, son el vestigio de una antigua fundición de plata, localizada en Antofagasta, Chile. Fue declarado el 7 de enero de 1974 como Monumento Histórico Nacional</p>
+        
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!-- III REGION DE Atacama -->
+
+        <br>
+        <br id="seccion-4">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> III Atacama </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_atacama1.jpg" alt="atacama"></svg>
+        <br>
+        <br>
+        <h2>Lagina Verde</h2>
+        <p>Su hermosura es expectacular encontramos mar y campo naturaleza autoctona y vida silvestre como conejos zorros lengas codornices y bellos lugares para ir a pescar.</p>
+    
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_atacama2.jpg" alt="atacama2"></svg>
+        <br>
+        <br>
+        <h2>Laguna Santa Rosa</h2>
+        <p> La Laguna Santa Rosa chilena que se encuentra en la Región de Atacama es en realidad un lago hipersalino de montaña. Está próximo al paso internacional San Francisco.</p>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_atacama3.jpg" alt="atacama3"></svg>
+        <br>
+        <br>
+        <h2>Bahia Inglesa</h2>
+        <p>Una playa con aguas turquesas, a una temperatura que da gusto bañarse y disfrutar de un día maravilloso de playa!</p>
+       
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!-- IV REGION DE Coquimbo -->
+
+        <br>
+        <br id="seccion-5">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> IV Coquimbo </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_coquimbo1.jpg" alt="coquimbo"></svg>
+        <br>
+        <br>
+        <h2>Observatorio Mamalluca</h2>
+        <p>Tenemos los productos necesarios para que vayas a conocer el lugar que desea!. No te pierdas las ofertas de isntantaneas que tenemos para tí.</p>
+     
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_coquimbo2.jpg" alt="coquimbo2"></svg>
+        <br>
+        <br>
+        <h2>Reserva Nacional Pingüino de Humboldt</h2>
+        <p>La Reserva nacional Pingüino de Humboldt está compuesta por tres islas: Chañaral, Choros y Damas, ubicadas en el límite entre las regiones de Atacama y Coquimbo. Se ubica a unos 100 kilómetros al norte de La Serena en la Región de Coquimbo</p>
+
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_coquimbo3.jpg" alt="coquimbo3"></svg>
+        <br>
+        <br>
+        <h2>Parque Nacional Bosque Fray Jorge</h2>
+        <p>Sendero del bosque hidrófilo: de tipo interpretativo de 1000 metros, carpeta de tierra con suave pendiente, apto para toda persona, posible de recorrer en 1 hora.</p>
+ 
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!--  V REGION DE Valparaiso: -->
+
+        <br>
+        <br id="seccion-6">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> V Valparaiso </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_valparaiso2.jpg" alt="valp"></svg>
+        <br>
+        <br>
+        <h2>Reñaca</h2>
+        <p> Fiestas, bohemia, playa, diversión y mucho más es lo que promete Reñaca durante los meses de verano.</p>
+      
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_valparaiso1.jpg" alt="valp2"></svg>
+        <br>
+        <br>
+        <h2> Quinta Vergara</h2>
+        <p>En el interior de este recinto se ubica el anfiteatro al aire libre, donde se desarrolla el Festival Internacional de la canción de Viña del Mar.</p>
+    
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_valparaiso3.jpg" alt="valp3"></svg>
+        <br>
+        <br>
+        <h2>Casa museo la sebastiana - Pablo Neruda</h2>
+        <p> destaca por la belleza de su construcción y su magnífica vista a la bahía del puerto.</p>
+        
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!-- XIII REGION Metropolitana -->
+
+        <br>
+        <br id="seccion-7">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> XIII Metropolitana </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_santiago1.jpg" alt="santiago"></svg>
+        <br>
+        <br>
+        <h2>Cerro san cristobal</h2>
+        <p>El Parque Metropolitano de Santiago es uno de los principales espacios de recreación, naturaleza, cultura y deporte de la capital. </p>
+     
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_santiago2.jpg" alt="santiago2"></svg>
+        <br>
+        <br>
+        <h2>Buin Zoo</h2>
+        <p> Buin Zoo es una gran alternativa para venir a aprender todo sobre los animales y el medioambiente. Cuenta con especies únicas en Chile, como Orangután, Rinoceronte, Leopardo de las Nieves, etc.</p>
+
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_santiago3.jpg" alt="santiago3"></svg>
+        <br>
+        <br>
+        <h2>Cajon del Maipo</h2>
+        <p> El Cajón del Maipo es un cañón cordillerano rodeado de cerros, macizos y farellones.</p>
+
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!-- VI Región De Libertador Bdo. O'higgins -->
+
+        <br>
+        <br id="seccion-8">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> VI Libertador Bdo. O'higgins  </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_ohiggins1.jpg" alt="ohiggins"></svg>
+        <br>
+        <br>
+        <h2>Tour sewell</h2>
+        <p> denominada la ciudad de las escaleras, corresponde a un ex campamento minero con más de 100 años de historia.</p>
+   
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_ohiggins2.jpg" alt="ohiggins2"></svg>
+        <br>
+        <br>
+        <h2>Valle del Cachapoal</h2>
+        <p> El Valle del Cachapoal, o Cuenca de Rancagua, es un área ubicada en la región central de Chile, al sur de la capital Santiago, que se extiende aproximadamente entre el paralelo 34º Sur y el meridiano 72º Oeste, donde se encuentra la capital de la Región del Libertador General Bernardo O'Higgins, Rancagua.</p>
+   
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_ohiggins3.jpg" alt="ohiggins3"></svg>
+        <br>
+        <br>
+        <h2>Playa punta de lobos</h2>
+        <p> Balneario apto para el baño y para las actividades al aire libre, tales como surf, pesca de orilla y caminatas.</p>
+  
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!-- VII Región De Maule -->
+
+        <br>
+        <br id="seccion-9">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> VII Maule  </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_maule1.jpg" alt="maule"></svg>
+        <br>
+        <br>
+        <h2>Reserva Nacional Radal Siete Tazas</h2>
+        <p>Lugar lleno de naturaleza por donde caminar, explorar y encontrarse con la naturaleza en su plenitud. </p>
+    
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_maule2.jpg" alt="maule2"></svg>
+        <br>
+        <br>
+        <h2>Colbun</h2>
+        <p>Colbún es una comuna ubicada en la provincia de Linares, en la región del Maule, Chile. Su capital es la villa del mismo nombre. La comuna de Colbún es la de mayor superficie de la provincia de Linares y concentra toda la alta cordillera de la provincia, al poseer toda la franja oriental de ésta.</p>
+ 
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_maule3.jpg" alt="maule3"></svg>
+        <br>
+        <br>
+        <h2>Volcán Descabezado Grande</h2>
+        <p> olcán Descabezado Grande se encuentra al lado del Volcán Quizapu, volcán activo, temporalmente pasivo, de 3.830 msnm de altitud, localizado en la Zona Central de Chile.</p>
+ 
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>
+
+<!-- VII Región De Ñuble-->
+
+        <br>
+        <br id="seccion-10">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> XVI Ñuble  </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_nuble1.jpg" alt="nuble"></svg>
+        <br>
+        <br>
+        <h2>chillan nevados</h2>
+        <p>Está rodeado por diversos valles pequeños cuales conforman ríos que desembocan en otros de mayor tamaño, es el caso del río Renegado que alimenta las aguas del río Chillán1​ y los ríos Gato y Las Minas que desembocan en el río Ñuble. </p>
+
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_nuble2.jpg" alt="nuble2"></svg>
+        <br>
+        <br>
+        <h2>Laguna del Huemul</h2>
+        <p>Este hiking recorre bosques y estepa alto andina donde se puede observar gran biodiversidad de flora y de fauna. Los Cóndores y halcones son especies comunes de avistar. Durante la caminata tendremos panorámicas del gran complejo Volcánico Nevados de Chillán y de Los valles Las Trancas y Shangri La.</p>
+
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_nuble3.jpg" alt="nuble3"></svg>
+        <br>
+        <br>
+        <h2>Reserva nacional Ñuble</h2>
+        <p> La reserva nacional Ñuble se encuentra en la precordillera andina, a 79 km de la ciudad de Chillán. Posee 75.078 ha, protegiendo una de las áreas de mayor diversidad biológica de Chile, resguardando especialmente al huemul, ciervo nativo de Chile y Argentina.</p>
+     
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>    
+
+<!-- VIII Región De Bio Bio -->
+
+        <br>
+        <br id="seccion-11">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> VIII Bio-Bio </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_biobio1.jpg" alt="biobio"></svg>
+        <br>
+        <br>
+        <h2>Reserva nacional de malalcahuello</h2>
+        <p>La unidad destaca por la protección de especies nativas tanto de flora como la araucaria, coigüe y roble, y de fauna, como pumas, zorros y carpinteros.</p>
+       
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_biobio3.jpg" alt="biobio2"></svg>
+        <br>
+        <br>
+        <h2>Volcán Antuco</h2>
+        <p>El volcán Antuco ​ es un estratovolcán ubicado en la comuna homónima, región del Bío-Bío, Chile. Se encuentra dentro del parque nacional Laguna del Laja, en la ribera suroeste de la laguna Laja, a noventa kilómetros al este de Los Ángeles.​</p>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_biobio2.jpg" alt="biobio3"></svg>
+        <br>
+        <br>
+        <h2>Saltos del Laja</h2>
+        <p>Los Saltos Del Laja o Salto del Laja, son cuatro cascadas del río de La Laja, ubicadas en la Región del Biobío en Chile. Está ubicado 25 km al norte de la ciudad de Los Ángeles, siendo el límite de ésta con la comuna de Cabrero</p>
+        
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>    
+
+<!-- IX Región De Araucania -->
+
+        <br>
+        <br id="seccion-12">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> IX Araucanía </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_araucania1.jpg" alt="araucania"></svg>
+        <br>
+        <br>
+        <h2>Parque Nacional Conguillío</h2>
+        <p>El parque nacional Conguillío está situado en la región de La Araucanía, 148 km al noreste de Temuco, en Chile. Tiene una superficie de 60 832 ha inicialmente formado por dos parques distintos siendo unidos y formando el parque actual.</p>
+ 
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_araucania3.jpg" alt="araucania2"></svg>
+        <br>
+        <br>
+        <h2>Volcan villarrica</h2>
+        <p>El volcán Villarrica es uno de los volcanes con mayor registro históricos de erupciones de Sudamérica. Su forma cónica casi perfecta permite reconocerlo desde la distancia.</p>
+ 
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_araucania2.jpg"alt="araucania3"></svg>
+        <br>
+        <br>
+        <h2>Los Ojos del Caburgua y su laguna azul</h2>
+        <p>Los Ojos del Caburgua es un atractivo turístico natural ubicado en la comuna de Pucón, Región de la Araucanía, Chile, cerca del Lago Caburgua. Los Ojos del Caburgua son pozos de agua de gran belleza, producto de su color azul eléctrico. El agua de estos pozos proviene de un desagüe subterráneo desde el Lago Caburgua.</p>
+
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>  
+
+<!-- XIV Región De Los Ríos -->
+
+        <br>
+        <br id="seccion-13">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> XIV Region de Los Ríos  </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_rios1.jpg" alt="rios"></svg>
+        <br>
+        <br>
+        <h2>Rio calle calle</h2>
+        <p>“KalleKalle” en mapudungun, lengua de los mapuches, quienes lo tomaron por la abundancia de la planta Libertia Chilensis que llenaba de flores blancas a la orilla del río.</p>
+       
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_rios2.jpg" alt="rios2"></svg>
+        <br>
+        <br>
+        <h2>Islote</h2>
+        <p>Los islotes son pequeñas islas donde normalmente no viven seres humanos por su pequeño tamaño. El nombre proviene de islette un diminutivo de "isle" en francés antiguo.</p>
+    
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_rios3.jpg" alt="rios3"></svg>
+        <br>
+        <br>
+        <h2>Salto del Huilo huilo</h2>
+        <p>Ubicado en el Río Fuy, de origen glaciar corre por un cauce de roca volcánica. Al llegar al salto, el cauce se estrecha en un hilo de agua muy profundo con una caída de 37 metros de altura y 10 metros de ancho</p>
+ 
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>      
+
+<!-- X Región De Los Lagos -->
+
+        <br>
+        <br id="seccion-14">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> X Region de Los Lagos  </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_lagos2.jpg" alt="lagos"></svg>
+        <br>
+        <br>
+        <h2>Saltos del Rio Petrohué</h2>
+        <p>Los Saltos del Río Petrohué son cascadas ubicadas a una corta distancia río abajo del lago Todos Los Santos. Se encuentran dentro del parque nacional Vicente Pérez Rosales cercano a la ruta hacia Petrohué, una localidad al borde de aquel lago</p>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_lagos1.jpg" alt="lagos2"></svg>
+        <br>
+        <br>
+        <h2>ko kayak</h2>
+        <p>Hoy en día Ko’KayaK suma la experiencia de guías expertos en sus especialidades que se van a preocupar que su estadía con nosotros sea inolvidable. Todos tenemos certificación en rescate en aguas blancas y primeros auxilios en zonas remotas.</p>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_lagos3.jpg" alt="lagos3"></svg>
+        <br>
+        <br>
+        <h2>volcan osorno</h2>
+        <p>El volcán Osorno se ubica a 47 km al noreste de la ciudad de Puerto Varas, y en su flanco occidental, a solo 11 km del cráter se sitúa el poblado de Las Cascadas.</p>
+        
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>  
+
+<!-- XI Región De Aysén -->
+
+        <br>
+        <br id="seccion-15">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> XI Region de Aysén  </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_aysen1.jpg" alt="aysen"></svg>
+        <br>
+        <br>
+        <h2>Parque Nacional Queulat</h2>
+        <p>El parque nacional Queulat es un parque nacional chileno, administrado por la Corporación Nacional Forestal. Se encuentra en la Región de Aysén del General Carlos Ibáñez del Campo, dividida entre las comunas de Cisnes y Lago Verde.</p>
+       
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_aysen2.jpg" alt="aysen2"></svg>
+        <br>
+        <br>
+        <h2>Catedral de Marmol</h2>
+        <p>Son los atractivos turísticos más importantes de la Patagonia. Compuestas por tres formaciones de piedra caliza, destacan por la belleza de sus columnas y el azul intenso de las aguas que las protegen.</p>
+      
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_aysen3.jpg" alt="aysen3"></svg>
+        <br>
+        <br>
+        <h2>Parque Nacional Laguna San Rafael</h2>
+        <p>El Parque Nacional Laguna San Rafael es un parque nacional chileno, ubicado en la región de Aysén. Este Parque Nacional, se caracteriza por ser el más grande de la región de Aysén, con 1 742 000 ha de extensión, de las cuales cerca de 400 000 ha corresponden a los hielos milenarios de los Campos de Hielo Norte.</p>
+    
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>   
+
+<!-- XII Región De Magallanes -->
+
+        <br>
+        <br id="seccion-16">
+    <hr class="featurette-divider">
+    <br>
+    <h3 class="centrar"> XII Region de Magallanes  </h3>
+    <br>
+    <div class="row featurette">
+      <div class="row">
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_magallanes1.jpg" alt="magallanes"></svg>
+        <br>
+        <br>
+        <h2>Isla Magdalena</h2>
+        <p>En Isla Magdalena nos encontraremos no sólo con un espectáculo visual, entre 30.000 y 40.000 parejas de pingüinos magallánicos</p>
+      
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_magallanes2.jpg" alt="magallanes2">
+        <br>
+        <br>
+        <h2>Torres del paine</h2>
+        <p>Es conocido por sus altas montañas, los témpanos de azul brillante que se aferran a los glaciares y las pampas doradas que albergan fauna poco común, como los guanacos.</p>
+  
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4"> 
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_magallanes3.jpg" alt="magallanes3"></svg>
+        <br>
+        <br>
+        <h3> Channel of the last hope(LA ULTIMA EZPERANZA)</h3>
+        <p>Descubriendo el paisaje que cambia bastante según se avanza al glaciar Serrano y Balmaceda,  respeto al entorno, donde un es el invitado y la naturaleza manda, belleza natural sin comparación.</p>
+
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    </div>   
+  </div><!-- /.container -->
+<footer class="page-footer font-small bg-dark pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+        <!-- Content -->
+        <img src="icono/widia.png" width="40" height="40" alt="logo">
+        <p class="text-light">Somos una empresa que busca resaltar lo mas hermoso de nuestro pais, dandote a conocer puntos turisticos y lugares historicos de este, ademas, de ayudarte a visitar lugares maravillosos.</p>
+
+      </div>
+      <!-- Grid column -->
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <!-- Links -->
+        <h5 class="text-uppercase text-light">CONTACTANOS</h5>
+        <ul class="list-unstyled">
+          <li>
+            <img src="img/rsz_fb.png" width="16" height="16" alt="facebook">
+            <a href="#!">FB</a>
+          </li>
+          <li>
+            <img src="img/rsz_fono.png" width="16" height="16" alt="fono">
+            <a href="#!">FONO</a>
+          </li>
+          <li>
+            <img src="img/rsz_gmail.png" width="16" height="16" alt="gmail">
+            <a href="#!">GMAIL</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
+    <a href="index.html"> www.widiatours.cl</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</body>
+</html>

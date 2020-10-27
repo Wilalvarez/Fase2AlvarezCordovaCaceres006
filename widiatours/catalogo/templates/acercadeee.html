@@ -1,0 +1,135 @@
+<!--Codigo pagina acerca de-->
+{% extends "base_generic.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Acerca de</title>
+  <!--Icono-->
+  {% load static %} 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>        
+      </head>
+      <body>
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top navbar-toggleable-sm">
+        <!--hamburguesa-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <!-- imagen menu -->
+          <a class="navbar-brand" href="{% url 'index.html' %}">
+              <img src="{% static 'icono/widia.png' %}" width="40" height="40" alt="logo">
+          </a>
+        <!-- Barra-->
+            <div class="collapse navbar-collapse" id="opciones">
+              <ul class="navbar-nav mr-auto" >
+              <li>
+                  <a class="nav-link text-light" href="{% url 'index.html' %}">INICIO</a>
+              </li>
+              <li class="nav-item dropdown">
+                    <a class="nav-link text-light" href="quehacer.html">QUÉ HACER</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-light" href="tienda.html">TIENDA</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-light" href="acercadeee.html">ACERCA DE CHILE</a>
+              </li>
+          </ul>
+          </div>
+          <form class="form-inline" action="iniciosesion.html">
+      
+              <input class="form-control mr-2" >
+              <button class="btn btn-outline-info mr-2 " >Buscar</button>
+              <button class="btn btn-success mr-2" type="submit">Login</button>
+          </form>
+         
+          
+          
+    </nav>
+
+    <br>
+    <div class="container">
+      <h1 class="centrar">Acerca de Chile</h1>
+      <div>
+          <p class="Texto">Chile tiene hermosos paisajes y variados lugares turísticos para visitar. Por su geografía, el territorio posee diversos paisajes, desde el desierto más árido del mundo (Atacama) hasta nevadas montañas y una larga zona costera, entre otras muchas alternativas para recorrer. Es una de las naciones más seguras y estables de Latinoamérica. </p>
+      </div>
+    </div>
+    <br>
+  <div class="container marketing">
+
+<!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading font-italic">Cultura</h2>
+        <p class="lead Texto">Las expresiones culturales varían en las diferentes zonas geográficas del país debido a las tan diferentes condiciones de cada parte del territorio chileno. En el norte se combina la influencia de los pueblos indígenas andinos con la tradición hispana, siendo muy importantes las manifestaciones religiosas (las diabladas, la Fiesta de la Virgen del Rosario de Andacollo…). En la zona central destaca la cultura huasa del hombre de campo, siendo su máxima expresión las fiestas patrias de septiembre en las que se baila la tradicional cueca y se organiza la temporada de los rodeos. En la zona sur domina la influencia mapuche y en Valdivia las tradiciones alemanas traídas por los inmigrantes. Por último, la identidad cultural de la Isla de Pascua es única debido al desarrollo de una cultura polinésica desde tiempos inmemoriales completamente aislada por varios siglos.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{% static 'img/paisajes-culturales-de-chile.jpg' %}" width="400" height="300" alt="paisajes">
+      </div>
+      <hr>
+    </div>
+    <hr>
+      <!--carrusel-->
+      <div id="demo" class="carousel slide" data-ride="carousel">
+      
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            
+            <img src="{% static 'img/rsz_2norte.jpg' %}" alt="Norte" width="1920" height="800">
+            
+          </div>
+          <div class="carousel-item">
+            
+            <img src="{% static 'img/rsz_2centro.jpg' %}" alt="Centro" width="1920" height="700">
+            
+          </div>
+          <div class="carousel-item">
+            
+            <img src="{% static 'img/rsz_2sur.jpg'" alt="sur" width="1920" height="700" >
+            
+          </div>
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading font-italic">Habitantes</h2>
+        <p class="lead Texto">La población total supera los 18.000.000 de habitantes; el país se divide en 16 regiones administrativas de norte a sur, siendo Santiago su capital y el lugar donde vive más de 1/3 de la población. El idioma oficial es el español.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="{% static 'img/marcha-historica-en-chile.jpeg' %}" width="400" height="300" alt="historia">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div>
+
+</html>
+{% endblock %}
