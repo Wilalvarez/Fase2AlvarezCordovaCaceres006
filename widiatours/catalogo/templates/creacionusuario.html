@@ -1,0 +1,148 @@
+<!--Codigo pagina creacion usuario-->
+{% extends "base_generic.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'img/aysen.png' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <title>Creacion Usuario</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/estiloform.css' %}" rel="stylesheet">
+    <style type="text/css">
+    input.transparent-input{
+       background-color:rgba(0,0,0,0) !important;
+       border:none !important;
+    }
+    
+    </style>
+    
+    <script>
+      $(function() 
+      {
+        $("#mi-formulario").validate({
+             rules: {
+                    nombre: "required",
+                    apellido: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    email2: {
+                        required: true,
+                        equalTo: "#email"
+                    },
+                    fecha: "required",
+                    contra: "required",
+                    contra2: {
+                        required: true,
+                        equalTo: "#contra"
+                    }   
+                }, //rules
+
+
+            messages: {
+              nombre:{
+                      required: 'Ingresa un nombre'
+              },
+              apellido:{
+                      required: 'Ingresa un apellido'
+              },
+                email: {
+                    required: 'Ingresa tu correo electrónico',
+                    email: 'Formato de correo no válido'
+                },
+                email2: {
+                      required: 'Reingresa el correo porfavor',
+                      equalTo: 'Correos no coinciden'
+                },
+                contra: {
+                    required: 'Ingresa una contraseña',
+                    minlength: 'Caracteres insuficiente'
+                },
+                fono:{
+                    required: 'Ingrese un número de celular',
+                    minlength: 'Cantidad de digitos insuficiente'
+                },
+                fecha:{
+                    required: 'Seleccione una fecha válida',
+                    min: 'Fecha no corresponde'
+                },
+                contra2: {
+                    required: 'Rengresa la contraseña',
+                    equalTo: 'Las contraseñas ingresadas no coinciden',
+                    minlength: 'Caracteres insuficiente'
+
+                }
+            }//messages
+        }); //$('#mi-formulario').validate
+    }); //function
+
+  </script>
+  </head>
+
+  <body class="text-center">
+    <div class="container">
+    <form id="mi-formulario" action="index.html" method="post">
+      
+      <img class="mb-4" src="{% static 'img/logoi.png' %}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Creando un cuenta turistica!</h1>
+      <div class="row">
+        <div class="col">
+          <input type="text" name ="nombre" class="form-control " placeholder="Nombre" required autofocus>
+          <br>
+        </div>
+        <div class="col">
+          <input type="text" name ="apellido" class="form-control " placeholder="Apellido" required >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="email" name ="email" class="form-control" placeholder="Correo electronico..." required >
+          <br>
+        </div>
+        <div class="col">
+         <div class="col">
+           <input type="date" name ="fecha" min="1950-01-01" class="form-control" required >
+          
+        </div>
+        </div>
+      </div>
+       <div class="row">
+        
+        <div class="col">
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="password" name="contra" class="form-control" placeholder="Contraseña" required>
+          <br>
+        </div>
+     
+      </div>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordar cuenta
+        </label>
+      </div>
+      <button class="btn btn-lg  btn-info btn-block" type="submit">Registrarse!</button>
+      <small><a href="{% url 'index.html' %}">Regresar</a></small>
+      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </form>
+    </div>
+    <video id="videoBG" autoplay muted loop>
+        <source src="{% static 'img/videochile.mp4' %}" type="video/mp4">
+    </video>
+  </body>
+</html>
+{% endblock %}

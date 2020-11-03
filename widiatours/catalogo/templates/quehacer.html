@@ -1,51 +1,12 @@
-<!--Codigo pagina que hacer-->
+{% extends "base_generic.html" %}
+
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
   <title>Que Hacer?</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
   <!--Idioma español-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!--Icono-->
-  <link rel="icon" type="image/png" href="icono/avion.png" >
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <style>
-  /* Make the image fully responsive */
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
-  .dropdown {
-  position: relative;
-  display: inline-block;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .navbar-inverse .navbar-toggler-icon { 
-    background-image: url("data:image/svg+xml;.."); 
-} 
-  </style>
-  
-
+  {% load static %}
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark sticky-top navbar-toggleable-sm">
@@ -54,16 +15,15 @@
         <span class="navbar-toggler-icon"></span>
     </button>
   <!-- imagen menu -->
-  <a class="navbar-brand" href="index.html">
-    <img src="icono/widia.png" width="40" height="40" alt="logo">
+  <a class="navbar-brand" href="{% url 'index.html' %}">
+    <img src="{% static 'icono/widia.png' %}" width="40" height="40" alt="logo">
   </a>
   <!-- Barra-->
     <div class="collapse navbar-collapse" >
     <ul class="navbar-nav mr-auto" >
     <li>
-      <a class="nav-link text-light" href="index.html" >INICIO</a>
+      <a class="nav-link text-light" href="{% url 'index.html' %}" >INICIO</a>
     </li>
-    <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-light">DÓNDE IR</a>    
       <div class="dropdown-content bg-dark">   
              <div class="btn-group dropright">
@@ -110,21 +70,14 @@
   <!-- Dropdown -->
     
     <li class="nav-item">
-      <a class="nav-link text-light" href="tienda.html">TIENDA</a>
+      <a class="nav-link text-light" href="{% url 'tienda.html' %}">TIENDA</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-light" href="acercadeee.html">ACERCA DE CHILE</a>
+      <a class="nav-link text-light" href="{% url 'acercadeee.html' %}">ACERCA DE CHILE</a>
     </li>
     </ul>
     </div>
-    <form class="form-inline" action="iniciosesion.html">
-        <input class="form-control mr-2">
-        <button class="btn btn-outline-info mr-2" >Buscar</button>
-        <button class="btn btn-success mr-2" type="submit">login</button>
-    </form>
-    
-    
-  
+
 </nav>
 <!--carrusel-->
 <div id="demo" class="carousel slide" data-ride="carousel">
@@ -140,7 +93,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       
-      <a href="#seccion-1"><img src="img/rsz_norteir.jpg" alt="Norte" width="1920" height="800"></a>
+      <a href="#seccion-1"><img src="{% static 'img/rsz_norteir.jpg' %}" alt="Norte" width="1920" height="800"></a>
       <div class="carousel-caption d-none d-md-block">
         <h5>Quieres conocer el norte de chile?</h5>
         <small>Echale un vistazo a los puntos mas significativos de la zona!</small>
@@ -148,7 +101,7 @@
     </div>
     <div class="carousel-item">
       
-      <a href="#seccion-2"><img src="img/rsz_centroi.jpg" alt="Centro" width="1920" height="700"></a>
+      <a href="#seccion-2"><img src="{% static 'img/rsz_centroi.jpg' %}" alt="Centro" width="1920" height="700"></a>
       <div class="carousel-caption d-none d-md-block">
         <h5>Buscas algo para salir de la rutina?</h5>
         <small>Conoce algunos puntos de turismo y relax de la zona centro.</small>
@@ -156,7 +109,7 @@
     </div>
     <div class="carousel-item">
       
-      <a href="#seccion-3"><img src="img/rsz_surir.jpg" alt="sur" width="1920" height="700"></a>
+      <a href="#seccion-3"><img src="{% static 'img/rsz_surir.jpg' %}" alt="sur" width="1920" height="700"></a>
       <div class="carousel-caption d-none d-md-block">
         <h5>Buscas algo mas tranquilo y alejado de la ciudad?</h5>
         <small>Vee las maravillas que te esperan en el sur de chile.</small>
@@ -177,9 +130,6 @@
 <!--CONTENIDO-->
 <div class="container marketing" id="seccion-1">
 
-    <!-- Three columns of text below the carousel -->
-
-    <!-- START THE FEATURETTES -->
     <!-- XV REGION Arica y Parinacota -->
     <br>
     <hr class="featurette-divider">
@@ -189,7 +139,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_arica1.jpg" alt="arica"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_arica1.jpg' %}" alt="arica"></svg>
         <br>
         <br>
         <h2>Playa El Laucho</h2>
@@ -197,7 +147,7 @@
         
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_arica2.jpg" alt="arica2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_arica2.jpg' %}" alt="arica2"></svg>
         <br>
         <br>
         <h2>Salar de Surire</h2>
@@ -205,7 +155,7 @@
       
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_arica3.jpg" alt="arica3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_arica3.jpg' %}" alt="arica3"></svg>
         <br>
         <br>
         <h2>Cuevas de Anzota</h2>
@@ -227,7 +177,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_tarapaca1.jpg" alt="tarapaca"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_tarapaca1.jpg' %}" alt="tarapaca"></svg>
         <br>
         <br>
         <h2>Volcan Isluga</h2>
@@ -235,7 +185,7 @@
     
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_tarapaca2.jpg" alt="tarapaca2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_tarapaca2.jpg' %}" alt="tarapaca2"></svg>
         <br>
         <br>
         <h2>Iquique</h2>
@@ -243,11 +193,12 @@
       
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_tarapaca3.jpg" alt="tarapaca3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_tarapaca3.jpg' %}
+         	" alt="tarapaca3"></svg>
         <br>
         <br>
         <h2>Museo Corbeta Esmeralda</h2>
-        <p> El Museo Corbeta Esmeralda es un museo chileno ubicado en la ciudad de Iquique. Consiste en una representación a escala real de la corbeta chilena Esmeralda, hundida en el combate naval de Iquique ocurrido en 1879.</p>
+        <p> El Museo Corbeta Esmeralda es un museo chileno ubicado en la ciudad de Iquique. Consiste en una representación a escala real de la corbeta chilena Esmeralda, hundida e{% static 'n el combate naval de Iquique ocurrido en 1879.</p>
         
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
@@ -265,7 +216,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_antofagasta1.jpg" alt="antofa"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_antofagasta1.jpg' %}" alt="antofa"></svg>
         <br>
         <br>
         <h2>Mano del Desierto</h2>
@@ -273,7 +224,7 @@
        
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_antofagasta2.jpg" alt="antofa2"></svg><!-- FALTA ESTA -->
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_antofagasta2.jpg' %}" alt="antofa2"></svg><!-- FALTA ESTA -->
         <br>
         <br>
         <h2>Laguna Miscanti</h2>
@@ -281,7 +232,7 @@
         
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_antofagasta3.jpg" alt="antofa3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_antofagasta3.jpg' %}" alt="antofa3"></svg>
         <br>
         <br>
         <h2>Museo Ruinas de Huanchaca</h2>
@@ -303,7 +254,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_atacama1.jpg" alt="atacama"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_atacama1.jpg' %}" alt="atacama"></svg>
         <br>
         <br>
         <h2>Lagina Verde</h2>
@@ -311,7 +262,7 @@
     
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_atacama2.jpg" alt="atacama2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_atacama2.jpg' %}" alt="atacama2"></svg>
         <br>
         <br>
         <h2>Laguna Santa Rosa</h2>
@@ -319,7 +270,7 @@
         
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_atacama3.jpg" alt="atacama3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_atacama3.jpg' %}" alt="atacama3"></svg>
         <br>
         <br>
         <h2>Bahia Inglesa</h2>
@@ -341,7 +292,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_coquimbo1.jpg" alt="coquimbo"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_coquimbo1.jpg' %}" alt="coquimbo"></svg>
         <br>
         <br>
         <h2>Observatorio Mamalluca</h2>
@@ -349,7 +300,7 @@
      
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_coquimbo2.jpg" alt="coquimbo2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_coquimbo2.jpg' %}" alt="coquimbo2"></svg>
         <br>
         <br>
         <h2>Reserva Nacional Pingüino de Humboldt</h2>
@@ -357,7 +308,7 @@
 
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_coquimbo3.jpg" alt="coquimbo3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_coquimbo3.jpg' %}" alt="coquimbo3"></svg>
         <br>
         <br>
         <h2>Parque Nacional Bosque Fray Jorge</h2>
@@ -379,7 +330,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_valparaiso2.jpg" alt="valp"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_valparaiso2.jpg' %}" alt="valp"></svg>
         <br>
         <br>
         <h2>Reñaca</h2>
@@ -387,7 +338,7 @@
       
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_valparaiso1.jpg" alt="valp2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_valparaiso1.jpg' %}" alt="valp2"></svg>
         <br>
         <br>
         <h2> Quinta Vergara</h2>
@@ -395,7 +346,7 @@
     
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_valparaiso3.jpg" alt="valp3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_valparaiso3.jpg' %}" alt="valp3"></svg>
         <br>
         <br>
         <h2>Casa museo la sebastiana - Pablo Neruda</h2>
@@ -417,7 +368,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_santiago1.jpg" alt="santiago"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_santiago1.jpg' %}" alt="santiago"></svg>
         <br>
         <br>
         <h2>Cerro san cristobal</h2>
@@ -425,7 +376,7 @@
      
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_santiago2.jpg" alt="santiago2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_santiago2.jpg' %}" alt="santiago2"></svg>
         <br>
         <br>
         <h2>Buin Zoo</h2>
@@ -433,7 +384,7 @@
 
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_santiago3.jpg" alt="santiago3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_santiago3.jpg' %}" alt="santiago3"></svg>
         <br>
         <br>
         <h2>Cajon del Maipo</h2>
@@ -455,7 +406,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_ohiggins1.jpg" alt="ohiggins"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_ohiggins1.jpg' %}" alt="ohiggins"></svg>
         <br>
         <br>
         <h2>Tour sewell</h2>
@@ -463,7 +414,7 @@
    
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_ohiggins2.jpg" alt="ohiggins2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_ohiggins2.jpg' %}" alt="ohiggins2"></svg>
         <br>
         <br>
         <h2>Valle del Cachapoal</h2>
@@ -471,7 +422,7 @@
    
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_ohiggins3.jpg" alt="ohiggins3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_ohiggins3.jpg' %}" alt="ohiggins3"></svg>
         <br>
         <br>
         <h2>Playa punta de lobos</h2>
@@ -493,7 +444,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_maule1.jpg" alt="maule"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_maule1.jpg' %}" alt="maule"></svg>
         <br>
         <br>
         <h2>Reserva Nacional Radal Siete Tazas</h2>
@@ -501,7 +452,7 @@
     
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_maule2.jpg" alt="maule2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_maule2.jpg' %}" alt="maule2"></svg>
         <br>
         <br>
         <h2>Colbun</h2>
@@ -509,7 +460,7 @@
  
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_maule3.jpg" alt="maule3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_maule3.jpg' %}" alt="maule3"></svg>
         <br>
         <br>
         <h2>Volcán Descabezado Grande</h2>
@@ -531,7 +482,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_nuble1.jpg" alt="nuble"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_nuble1.jpg' %}" alt="nuble"></svg>
         <br>
         <br>
         <h2>chillan nevados</h2>
@@ -539,7 +490,7 @@
 
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_nuble2.jpg" alt="nuble2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_nuble2.jpg' %}" alt="nuble2"></svg>
         <br>
         <br>
         <h2>Laguna del Huemul</h2>
@@ -547,7 +498,7 @@
 
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_nuble3.jpg" alt="nuble3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_nuble3.jpg' %}" alt="nuble3"></svg>
         <br>
         <br>
         <h2>Reserva nacional Ñuble</h2>
@@ -569,7 +520,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_biobio1.jpg" alt="biobio"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_biobio1.jpg' %}" alt="biobio"></svg>
         <br>
         <br>
         <h2>Reserva nacional de malalcahuello</h2>
@@ -577,7 +528,7 @@
        
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_biobio3.jpg" alt="biobio2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_biobio3.jpg' %}" alt="biobio2"></svg>
         <br>
         <br>
         <h2>Volcán Antuco</h2>
@@ -585,7 +536,7 @@
         
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_biobio2.jpg" alt="biobio3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_biobio2.jpg' %}" alt="biobio3"></svg>
         <br>
         <br>
         <h2>Saltos del Laja</h2>
@@ -607,7 +558,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_araucania1.jpg" alt="araucania"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_araucania1.jpg' %}" alt="araucania"></svg>
         <br>
         <br>
         <h2>Parque Nacional Conguillío</h2>
@@ -615,7 +566,7 @@
  
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_araucania3.jpg" alt="araucania2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_araucania3.jpg' %}" alt="araucania2"></svg>
         <br>
         <br>
         <h2>Volcan villarrica</h2>
@@ -623,7 +574,7 @@
  
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_araucania2.jpg"alt="araucania3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_araucania2.jpg' %}" alt="araucania3"></svg>
         <br>
         <br>
         <h2>Los Ojos del Caburgua y su laguna azul</h2>
@@ -645,7 +596,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_rios1.jpg" alt="rios"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_rios1.jpg' %}" alt="rios"></svg>
         <br>
         <br>
         <h2>Rio calle calle</h2>
@@ -653,7 +604,7 @@
        
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_rios2.jpg" alt="rios2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_rios2.jpg' %}" alt="rios2"></svg>
         <br>
         <br>
         <h2>Islote</h2>
@@ -661,7 +612,7 @@
     
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_rios3.jpg" alt="rios3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_rios3.jpg' %}" alt="rios3"></svg>
         <br>
         <br>
         <h2>Salto del Huilo huilo</h2>
@@ -683,7 +634,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_lagos2.jpg" alt="lagos"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_lagos2.jpg' %}" alt="lagos"></svg>
         <br>
         <br>
         <h2>Saltos del Rio Petrohué</h2>
@@ -691,7 +642,7 @@
         
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_lagos1.jpg" alt="lagos2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_lagos1.jpg' %}" alt="lagos2"></svg>
         <br>
         <br>
         <h2>ko kayak</h2>
@@ -699,7 +650,7 @@
         
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_lagos3.jpg" alt="lagos3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_lagos3.jpg' %}" alt="lagos3"></svg>
         <br>
         <br>
         <h2>volcan osorno</h2>
@@ -721,7 +672,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_aysen1.jpg" alt="aysen"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_aysen1.jpg' %}" alt="aysen"></svg>
         <br>
         <br>
         <h2>Parque Nacional Queulat</h2>
@@ -729,7 +680,7 @@
        
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_aysen2.jpg" alt="aysen2"></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_aysen2.jpg' %}" alt="aysen2"></svg>
         <br>
         <br>
         <h2>Catedral de Marmol</h2>
@@ -737,7 +688,7 @@
       
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_aysen3.jpg" alt="aysen3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_aysen3.jpg' %}" alt="aysen3"></svg>
         <br>
         <br>
         <h2>Parque Nacional Laguna San Rafael</h2>
@@ -759,7 +710,7 @@
     <div class="row featurette">
       <div class="row">
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_magallanes1.jpg" alt="magallanes"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_magallanes1.jpg' %}" alt="magallanes"></svg>
         <br>
         <br>
         <h2>Isla Magdalena</h2>
@@ -767,7 +718,7 @@
       
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_magallanes2.jpg" alt="magallanes2">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_magallanes2.jpg' %}" alt="magallanes2"> </svg>
         <br>
         <br>
         <h2>Torres del paine</h2>
@@ -775,7 +726,7 @@
   
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4"> 
-         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="img/resize/rsz_magallanes3.jpg" alt="magallanes3"></svg>
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><img src="{% static 'img/resize/rsz_magallanes3.jpg' %}" alt="magallanes3"></svg>
         <br>
         <br>
         <h3> Channel of the last hope(LA ULTIMA EZPERANZA)</h3>
@@ -786,53 +737,11 @@
 
     </div>   
   </div><!-- /.container -->
-<footer class="page-footer font-small bg-dark pt-4">
-
-  <!-- Footer Links -->
-  <div class="container-fluid text-center text-md-left">
-    <!-- Grid row -->
-    <div class="row">
-      <!-- Grid column -->
-      <div class="col-md-6 mt-md-0 mt-3">
-        <!-- Content -->
-        <img src="icono/widia.png" width="40" height="40" alt="logo">
-        <p class="text-light">Somos una empresa que busca resaltar lo mas hermoso de nuestro pais, dandote a conocer puntos turisticos y lugares historicos de este, ademas, de ayudarte a visitar lugares maravillosos.</p>
-
-      </div>
-      <!-- Grid column -->
-      <hr class="clearfix w-100 d-md-none pb-3">
-      <!-- Grid column -->
-      <div class="col-md-3 mb-md-0 mb-3">
-        <!-- Links -->
-        <h5 class="text-uppercase text-light">CONTACTANOS</h5>
-        <ul class="list-unstyled">
-          <li>
-            <img src="img/rsz_fb.png" width="16" height="16" alt="facebook">
-            <a href="#!">FB</a>
-          </li>
-          <li>
-            <img src="img/rsz_fono.png" width="16" height="16" alt="fono">
-            <a href="#!">FONO</a>
-          </li>
-          <li>
-            <img src="img/rsz_gmail.png" width="16" height="16" alt="gmail">
-            <a href="#!">GMAIL</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-  <!-- Footer Links -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
-    <a href="index.html"> www.widiatours.cl</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
-
+  {%load static%}
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+  
 </body>
 </html>
+ {% endblock %}

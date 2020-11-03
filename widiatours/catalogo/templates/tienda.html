@@ -1,52 +1,12 @@
-<!--Codigo pagina principal -->
+{% extends "base_generic.html" %}
+
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WIDIA STORE</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--Idioma español-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-  <!--Icono-->
-  <link rel="icon" type="image/png" href="icono/avion.png" >
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-  <!-- insercion de css en el mismo documento html-->
-  <style>
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
-  .dropdown {
-  position: relative;
-  display: inline-block;
-  }
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .navbar-inverse .navbar-toggler-icon { 
-    background-image: url("data:image/svg+xml;.."); 
-} 
-  </style> 
-  
-
+   {% load static %}
+ 
 </head>
 <body>
     
@@ -56,37 +16,29 @@
         <span class="navbar-toggler-icon"></span>
     </button>
   <!-- imagen menu -->
-  <a class="navbar-brand" href="index.html">
-    <img src="icono/widia.png" width="40" height="40" alt="logo">
+  <a class="navbar-brand" href="{% url  'index.html' %}">
+    <img src="{% static 'icono/widia.png' %}" width="40" height="40" alt="logo">
   </a>
   <!-- Barra-->
     <div class="collapse navbar-collapse" id="opciones">
     <ul class="navbar-nav mr-auto" >
     <li>
-      <a class="nav-link text-light" href="index.html">INICIO</a>
+      <a class="nav-link text-light" href="{% url 'index.html' %}">INICIO</a>
     </li>
     
   <!-- Dropdown -->
     <li class="nav-item">
-        <a class="nav-link dropdown text-light" href="quehacer.html" >QUÉ HACER</a>
+        <a class="nav-link dropdown text-light" href="{% url 'quehacer.html' %}" >QUÉ HACER</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-light" href="tienda.html">TIENDA</a>
+      <a class="nav-link text-light" href="{% url 'tienda.html' %}">TIENDA</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-link text-light" href="acercadeee.html">ACERCA DE CHILE</a>
+      <a class="nav-link text-light" href="{% url 'acercadeee.html' %}">ACERCA DE CHILE</a>
     </li>
     </ul>
     </div>
-    <form class="form-inline" action="iniciosesion.html">
-
-        <input class="form-control mr-2" placeholder="Puerto montt....">
-        <button class="btn btn-outline-info mr-2">Buscar</button>
-        <button class="btn btn-success mr-2" type="submit">Login</button>
-    </form>
-    
-    
   
 </nav>
 <!--carrusel-->
@@ -103,7 +55,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
   
-        <a href="#seccion-1"><img src="img/tienda1.jpg" alt="Norte" width="1920" height="800"></a>
+        <a href="#accesorios"><img src="{% static 'img/tienda1.jpg' %}" alt="Norte" width="1920" height="800" ></a>
         <div class="carousel-caption d-none d-md-block">
           <h5>Trekking</h5>
           <small>Cuidate y disfruta de la naturaleza!</small>
@@ -111,7 +63,7 @@
       </div>
       <div class="carousel-item">
   
-        <a href="#seccion-2"><img src="img/tienda2.jpg" alt="Centro" width="1920" height="700"></a>
+        <a href="#accesorios"><img src="{% static 'img/tienda2.jpg' %}" alt="Centro" width="1920" height="700"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5>Playa</h5>
           <small>Comparte con la frescura de la playa!</small>
@@ -119,7 +71,7 @@
       </div>
       <div class="carousel-item">
   
-        <a href="#seccion-3"><img src="img/tienda3.jpg" alt="sur" width="1920" height="700"></a>
+        <a href="#accesorios"><img src="{% static 'img/tienda3.jpg' %}" alt="sur" width="1920" height="700"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5>Nieve</h5>
           <small>La belleza de la nieve en su maximo esplendor!</small>
@@ -138,11 +90,11 @@
 <
 <div class="container">
   <br>
-  <div class="alert alert-warning" role="alert">
+  <div class="alert alert-warning" role="alert" id= "accesorios">
      Debido a la contingencia por el <a href="https://www.conaf.cl/protocolo-de-coronavirus-covid-19/" target="_blank" class="alert-link">COVID-19</a>. No todos los puntos turisticos estan abiertos!.
   </div>
   <hr>
-  <h2 class="centrar">Accesorios</h2>
+  <h2 class="centrar" >Accesorios</h2>
   <hr>
   <main role="main">
   <div class="album py-5 bg-light">
@@ -151,12 +103,12 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="img/productos/Carpa.jpg"  >
+            <img src="{% static 'img/ACCESORIOS/camping.jpg' %}">
             <div class="card-body">
               <p class="card-text">Encontraras todos los accesorios necesarios para salir de Camping!</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="text" class="btn btn-sm btn-outline-info"><a href="camping.html" target="_blank">Camping</a></button>
+                  <button type="text" class="btn btn-sm btn-outline-info"><a href="{% url 'camping.html' %}" target="_blank">Camping</a></button>
                 </div>
                 <small class="text-muted">Stock: 50 Unidades</small>
               </div>
@@ -165,12 +117,12 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="img/productos/Lentes.jpg"  >
+            <img src="{% static 'img/ACCESORIOS/playa.jpg' %}">
             <div class="card-body">
               <p class="card-text">¿Vacaciones en la playa sin accesorios? bueno este no sera el caso!</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-info"><a href="playa.html" target="_blank">Playa</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'playa.html' %}" target="_blank">Playa</a></button>
                 </div>
                 <small class="text-muted">Stock: 50 Unidades</small>
               </div>
@@ -179,12 +131,12 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="img/productos/Casco.jpg"  >
+            <img src="{% static 'img/ACCESORIOS/nieve.jpg' %}"  >
             <div class="card-body">
               <p class="card-text">Podras Esquiar sin ningun problema con nuestros accesorios y mucho más!</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-info"><a href="nieve.html" target="_blank">Nieve</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'nieve.html' %}" target="_blank">Nieve</a></button>
                 </div>
                 <small class="text-muted">Stock: 50 Unidades</small>
               </div>
@@ -194,12 +146,12 @@
 
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="img/productos/Mochila.jpg"  >
+            <img src="{% static 'img/ACCESORIOS/kayak.jpg' %}"  >
             <div class="card-body">
               <p class="card-text">Sube todas las montañas que quieras con nuestros accesorios!</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-info"><a href="kayal.html" target="_blank">Kayak</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'kayak.html' %}" target="_blank">Kayak</a></button>
                 </div>
                 <small class="text-muted">Stock: 50 Unidades</small>
               </div>
@@ -208,12 +160,12 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="img/productos/Banano.jpg"  >
+            <img src="{% static 'img/ACCESORIOS/trekking.png' %}"  >
             <div class="card-body">
               <p class="card-text">Cuidate y disfruta de la naturaleza con nuestros accesorios!</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-info"><a href="trekking.html" target="_blank">Trekking
+                  <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'trekking.html' %}" target="_blank">Trekking</a>
                 </div>
                 <small class="text-muted">Stock: 50 Unidades</small>
               </div>
@@ -222,12 +174,12 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="img/productos/Antiparra (2).png"  >
+            <img src="{% static 'img/ACCESORIOS/ciclismo.jpg' %}"  >
             <div class="card-body">
               <p class="card-text">Ningun ladron internacional podra quitarte nuestros accesorios!</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-info"><a href="ciclismo.html" target="_blank">Ciclismo</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'ciclismo.html' %}" target="_blank">Ciclismo</a></button>
                 </div>
                 <small class="text-muted">Stock: 50 Unidades</small>
               </div>
@@ -248,12 +200,12 @@
                   <div class="row">
                     <div class="col-md-4">
                       <div class="card mb-4 shadow-sm">
-                        <img src="img/productos/Chaqueta.jpg"  >
+                        <img src="{% static 'img/VESTIMENTA/chaqueta.jpg' %}"  >
                         <div class="card-body">
                           <p class="card-text">No pasaras frio en ningun lado con nuestras chaquetas! </p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                              <button type="text" class="btn btn-sm btn-outline-info"><a href="chaqueta.html" target="_blank">Chaquetas</a></button>
+                              <button type="text" class="btn btn-sm btn-outline-info"><a href="{% url 'chaqueta.html' %}" target="_blank">Chaquetas</a></button>
                             </div>
                             <small class="text-muted">Stock: 50 Unidades</small>
                           </div>
@@ -262,13 +214,13 @@
                     </div>
                     <div class="col-md-4">
                       <div class="card mb-4 shadow-sm">
-                        <img src="img/productos/Poleron.jpg"  >
+                        <img src="{% static 'img/VESTIMENTA/Poleron.png' %}"  >
                         <div class="card-body">
                           <p class="card-text">Que te pongan el gorro o no? tu decides...
                           </p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-sm btn-outline-info"><a href="poleron.html" target="_blank">Polerones</a></button>
+                              <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'poleron.html' %}" target="_blank">Polerones</a></button>
                             </div>
                             <small class="text-muted">Stock: 50 Unidades</small>
                           </div>
@@ -277,12 +229,12 @@
                     </div>
                     <div class="col-md-4">
                       <div class="card mb-4 shadow-sm">
-                        <img src="img/productos/Polera.jpg"  >
+                        <img src="{% static 'img/VESTIMENTA/Polera.png' %}"  >
                         <div class="card-body">
                           <p class="card-text">Tienes la opcion de enseñar tus biceps con nuestras Poleras!</p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-sm btn-outline-info"><a href="polera.html" target="_blank">Poleras</a></button>
+                              <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'polera.html' %}" target="_blank">Poleras</a></button>
                             </div>
                             <small class="text-muted">Stock: 50 Unidades</small>
                           </div>
@@ -292,12 +244,12 @@
             
                     <div class="col-md-4">
                       <div class="card mb-4 shadow-sm">
-                        <img src="img/productos/Pantalon.jpg"  >
+                        <img src="{% static 'img/VESTIMENTA/Pantalon.jpg' %}"  >
                         <div class="card-body">
                           <p class="card-text">Una relación muy larga con nuestros Pantalones!</p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-sm btn-outline-info"><a href="pantalon.html" target="_blank">Pantalones</a></button>
+                              <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'pantalon.html' %}" target="_blank">Pantalones</a></button>
                             </div>
                             <small class="text-muted">Stock: 50 Unidades</small>
                           </div>
@@ -306,12 +258,12 @@
                     </div>
                     <div class="col-md-4">
                       <div class="card mb-4 shadow-sm">
-                        <img src="img/productos/Short.jpg"  >
+                        <img src="{% static 'img/VESTIMENTA/Short.jpg' %}"  >
                         <div class="card-body">
                           <p class="card-text">Quede corto de ideas, pero tambien son cortos nuestros productos!</p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-sm btn-outline-info"><a href="short.html" target="_blank">Shorts</a></button>
+                              <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'short.html' %}" target="_blank">Shorts</a></button>
                             </div>
                             <small class="text-muted">Stock: 50 Unidades</small>
                           </div>
@@ -320,12 +272,12 @@
                     </div>
                     <div class="col-md-4">
                       <div class="card mb-4 shadow-sm">
-                        <img src="img/productos/Zapato.jpg"  >
+                        <img src="{% static 'img/VESTIMENTA/Zapato.jpg' %}"  >
                         <div class="card-body">
                           <p class="card-text">Siente la comodidad de nuestros calzados!</p>
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-sm btn-outline-info"><a href="calzado.html" target="_blank">Calzados</a></button>
+                              <button type="button" class="btn btn-sm btn-outline-info"><a href="{% url 'calzado.html' %}" target="_blank">Calzados</a></button>
                             </div>
                             <small class="text-muted">Stock: 50 Unidades</small>
                           </div>
@@ -333,58 +285,20 @@
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
           
 
 </main>
 </div>
-
-
-<footer class="page-footer font-small bg-dark pt-4">
-
-  <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
-    <!-- Grid row -->
-        <div class="row">
-          <!-- Grid column -->
-          <div class="col-md-6 mt-md-0 mt-3">
-            <!-- Content -->
-            <img src="icono/widia.png" width="40" height="40" alt="logo">
-            <p class="text-light">Somos una empresa que busca resaltar lo mas hermoso de nuestro pais, dandote a conocer puntos turisticos y lugares historicos de este, ademas, de ayudarte a visitar lugares maravillosos.</p>
-
-          </div>
-          <!-- Grid column -->
-          <hr class="clearfix w-100 d-md-none pb-3">
-          <!-- Grid column -->
-          <div class="col-md-3 mb-md-0 mb-3">
-            <!-- Links -->
-            <h5 class="text-light">CONTACTANOS!</h5>
-            <ul class="list-unstyled">
-              <li>
-                  <img src="img/rsz_fb.png" alt="facebook">
-                <a href="#!">FB</a>
-              </li>
-              <li>
-                  <img src="img/rsz_fono.png" alt="fono"> 
-                <a href="#!">FONO </a>
-              </li>
-              <li>
-                  <img src="img/rsz_gmail.png" alt="gmail">
-                <a href="#!">GMAIL</a>
-              </li>
-            </ul>
-        </div>
-      </div>
-    </div>
-  <!-- Footer Links -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/%22%3E" > www.widiatours.cl</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-
+{%load static%}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
 
 </body>
 </html>
+{% endblock %}

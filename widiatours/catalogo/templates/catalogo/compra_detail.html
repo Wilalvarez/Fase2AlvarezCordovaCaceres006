@@ -1,0 +1,19 @@
+{% extends "base_generic" %}
+
+{% block content %}
+
+<h1>Producto: {{Compra}} </h1>
+<p>{{Compra.name}}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+<h4>Compras</h4>
+
+<dl>
+{% for compra in Compra.compra_set.all %}
+	<dt><a href="{% url 'compra-update' pk=compra.pk %}">{{compra}}</a>({{compra.compra_set.all.count}})</dt>
+	<dd>{{compra.descripcion}}</dd>
+{% endfor %}
+</dl>
+
+</div>
+{% endblock %}

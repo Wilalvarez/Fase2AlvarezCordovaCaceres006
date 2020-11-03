@@ -1,0 +1,78 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'img/aysen.png' %}">
+    <title>Login</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/estiloform.css' %}" rel="stylesheet">
+    <style type="text/css">
+    input.transparent-input{
+       background-color: #ECEFF3;
+    }
+
+    </style>
+    <script>
+      $(function() 
+      {
+        $("#mi-formulario1").validate({
+             rules: {
+                    email: {
+                      required: true,
+                      email: true
+                    },
+                    contra: "required", 
+                       
+                    }, //rules
+            messages: {
+                    email: {
+                        required: 'Ingresa tu correo electrónico',
+                        email: 'Formato de correo no válido'
+                    },
+                    contra: {
+                        required: 'Ingresa una contraseña'
+                    }
+                
+            }//messages
+        }); //$('#mi-formulario').validate
+    }); //function
+
+  </script>
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" id="mi-formulario1" action="index.html" method="post">
+      <br>
+      <br>
+      <img class="mb-4" src="{% static 'img/logoi.png' %}" alt="logo" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion Como Turista!</h1>
+      <input type="email" name ="email" class="form-control" placeholder="ejemplo@ejemplo.com" required autofocus>
+      <input type="password" name="contra" class="form-control" placeholder="Contraseña" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordar cuenta
+        </label>
+      </div>
+      <button class="btn btn-lg  btn-info btn-block" type="submit">Entrar Ya!</button>
+      <h5 class="text-light">No tienes una cuenta? <a href="{% url 'creacionusuario.html' %}"  style="color:#00FFF2;">Registrate</a></h5>
+      <small><a href="{% url 'index.html' %}">Regresar</a></small>
+      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </form>
+    <video id="videoBG" autoplay muted loop>
+        <source src="{% static 'img/videochile.mp4' %}" type="video/mp4">
+    </video>
+  </body>
+</html>
+{% endblock %}
