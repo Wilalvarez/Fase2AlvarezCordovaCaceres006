@@ -1,14 +1,35 @@
-{% extends "base_generic.html" %}
 
-{% block content%}
-<p></p>
-<h1>Eliminando Compra</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar Delete</title>
+     {% load static %}
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{% static 'icono/avion.png' %}" >
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/%22%3E">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js%22%3E"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/estiloform.css' %}" rel="stylesheet">
+</head>
+<body>
+<div >
+<p><h1 class="centrar">Eliminando Compra</h1></p>
 <p>Estas seguro de eliminar la compra: {{ compra }}</p>
-
 <form action="" method="POST">
     {% csrf_token %}
     <input type="submit" action="" value="Si, eliminar." />
+    <a href="{% url 'tienda.html' %}"><input type="button" value="Volver"></a>
 </form>
-
-{% endblock %}
+</div>
+<video id="videoBG" autoplay muted loop>
+    <source src="{% static 'img/videochile.mp4' %}" type="video/mp4">
+</video>
+</body>
+</html>

@@ -1,7 +1,26 @@
-{% extends "base_generic.html" %}
 
-{% block content %}
-    <h1>Lista de Compras</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creando compra</title>
+   {% load static %}
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{% static 'icono/avion.png' %}" >
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/%22%3E">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js%22%3E"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/estiloform.css' %}" rel="stylesheet">
+</head>
+<body>
+<div style="background-color:#D5DBDB">
+<h1>Lista de compra</h1>
 
     {% if compra_list %}
     <ul>
@@ -16,6 +35,11 @@
 
     {% else %}
       <p>No se ha agregado ninguna compra</p>
-
     {% endif %}
-{% endblock %}
+    <a href="{% url 'tienda.html' %}"><input type="button" value="Volver"></a>
+</div>
+<video id="videoBG" autoplay muted loop>
+    <source src="{% static 'img/videochile.mp4' %}" type="video/mp4">
+</video>
+</body>
+</html>
