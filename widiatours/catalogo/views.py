@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Compra
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views import generic
 
 class CompraCreate(CreateView):
     model = Compra
@@ -16,8 +17,11 @@ class CompraDelete(DeleteView):
     model = Compra
     success_url = reverse_lazy('tienda.html')
 
-from django.views import generic
+
 class CompraDetailView(generic.DetailView):
+    model = Compra
+
+class CompraListView(generic.ListView):
     model = Compra
 
 #LOGIN 

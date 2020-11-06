@@ -1,19 +1,9 @@
-{% extends "base_generic" %}
+{% extends "base_generic.html" %}
 
 {% block content %}
-
-<h1>Producto: {{Compra}} </h1>
-<p>{{Compra.name}}</p>
-
-<div style="margin-left:20px;margin-top:20px">
-<h4>Compras</h4>
-
-<dl>
-{% for compra in Compra.compra_set.all %}
-	<dt><a href="{% url 'compra-update' pk=compra.pk %}">{{compra}}</a>({{compra.compra_set.all.count}})</dt>
-	<dd>{{compra.descripcion}}</dd>
-{% endfor %}
-</dl>
-
+<div class="controls form-register">
+<h1 >Informacion de la compra :</h1>
+<p ><strong>Codigo: </strong> {{ compra.codigo }}</p>
+<p ><strong>Name: </strong> {{ compra.name }}</p>
 </div>
 {% endblock %}

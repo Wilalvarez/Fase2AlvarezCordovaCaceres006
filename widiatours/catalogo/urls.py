@@ -7,7 +7,8 @@ urlpatterns = [
     path('creacionusuario',views.creacionusuario,name='creacionusuario.html'),
     #PAGINAS
     path('',views.index,name='index.html'),
-    path('compra/<int:pk>', views.CompraDetailView.as_view(), name='compra-detail'),
+    path('compra/<str:pk>',views.CompraDetailView.as_view(), name='compra-detail'),
+    path('compra/', views.CompraListView.as_view(), name='compra'),
     path('acercadeee',views.acercadeee,name='acercadeee.html'),
     path('tienda',views.tienda,name='tienda.html'),
     path('quehacer',views.quehacer,name='quehacer.html'),
@@ -33,6 +34,6 @@ urlpatterns = [
 
 urlpatterns += [
     path('compra/create/', views.CompraCreate.as_view(), name='compra_create'),
-    path('compra/<int:pk>/update/', views.CompraUpdate.as_view(), name='compra_update'),
-    path('compra/<int:pk>/delete/', views.CompraDelete.as_view(), name='compra_delete'),
+    path('compra/<str:pk>/update/', views.CompraUpdate.as_view(), name='compra_update'),
+    path('compra/<str:pk>/delete/', views.CompraDelete.as_view(), name='compra_delete'),
 ]

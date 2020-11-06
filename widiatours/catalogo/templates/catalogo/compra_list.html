@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Lista de Compras</h1>
+
+    {% if compra_list %}
+    <ul>
+      {% for compra in compra_list %}
+      <li>
+        <a href="{{ compra.get_absolute_url }}">{{ compra.name }}</a> 
+      </li>
+
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>No se ha agregado ninguna compra</p>
+
+    {% endif %}
+{% endblock %}
